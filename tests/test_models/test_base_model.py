@@ -10,8 +10,7 @@ import os
 @unittest.skipIf(os.getenv('HBNB_TYPE_STORAGE') == 'db',
                  'basemodel test not supported')
 class test_basemodel(unittest.TestCase):
-    """ #!/usr/bin/python3
-""" """
+    """ """
 from models.base_model import BaseModel, Base
 from datetime import datetime
 import unittest
@@ -35,7 +34,7 @@ class test_basemodel(unittest.TestCase):
         pass
 
     def tearDown(self):
-        """"""
+        """teardown"""
         try:
             os.remove('file.json')
         except Exception:
