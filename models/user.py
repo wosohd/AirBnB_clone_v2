@@ -3,7 +3,7 @@
 
 import models
 import hashlib
-from models.base_model import BaseModel
+from models.base_model import BaseModel, Base
 from os import getenv
 from sqlalchemy.orm import relationship
 from sqlalchemy import Column, String
@@ -11,7 +11,7 @@ from sqlalchemy import Column, String
 
 class User(BaseModel, Base):
     """Represents the User class"""
-     if getenv('HBNB_TYPE_STORAGE') == 'db':
+    if getenv('HBNB_TYPE_STORAGE') == 'db':
         __tablename__ = 'users'
         email = Column(String(128),
                        nullable=False)
