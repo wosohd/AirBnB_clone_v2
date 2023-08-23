@@ -17,15 +17,15 @@ else:
 
 
 class BaseModel:
-    """The BaseModel class"""
+    """BaseModel class"""
 
     if getenv("HBNB_TYPE_STORAGE") == 'db':
         id = Column(String(60), nullable=False, primary_key=True)
-        created_at = Column(DateTime, nullable=False, default=datetime.utcnow)   
-        updated_at = Column(DateTime, nullable=False, default=datetime.utcnow)   
+        created_at = Column(DateTime, nullable=False, default=datetime.utcnow)
+        updated_at = Column(DateTime, nullable=False, default=datetime.utcnow)
 
     def __init__(self, *args, **kwargs):
-        """Initialization of the base model"""
+        """Initialization"""
         self.id = str(uuid.uuid4())
         self.created_at = datetime.now()
         self.updated_at = self.created_at
@@ -34,14 +34,14 @@ class BaseModel:
                 continue
             setattr(self, key, value)
             if type(self.created_at) is str:
-                self.created_at = datetime.strptime(self.created_at, time_fmt)   
+                self.created_at = datetime.strptime(self.created_at, time_fmt)
             if type(self.updated_at) is str:
-                self.updated_at = datetime.strptime(self.updated_at, time_fmt)   
+                self.updated_at = datetime.strptime(self.updated_at, time_fmt)
 
     def __str__(self):
-        """String representation of the BaseModel class"""
-        return "[{:s}] ({:s}) {}".format(self.__class__.__name__, self.id,       
-                                         self.__dict__)
+        """String representation of BaseModel class"""
+        return "[{:s}] ({:s}) {}".format(self.__class__.__name__, self.id,
+                self.__dict__)
 
     def save(self):
         """updates the attribute"""
@@ -70,5 +70,5 @@ class BaseModel:
         return new_dict
 
     def delete(self):
-        """Delete current instance from storage"""
+        """Delete current instance"""
         models.storage.delete(self)
