@@ -1,5 +1,11 @@
+<<<<<<< HEAD
 # Setup puppet pp
 
+=======
+# Configures a web server for deployment of web_static.
+
+# Nginx configuration file
+>>>>>>> 76fec58ef53b10240b16544d83fa0faaa2e595e5
 $nginx_conf = "server {
     listen 80 default_server;
     listen [::]:80 default_server;

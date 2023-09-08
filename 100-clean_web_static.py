@@ -2,11 +2,20 @@
 import os
 from fabric.api import *
 
+<<<<<<< HEAD
 env.hosts = ['100.25.19.204', '54.157.159.85']
 
 
 def do_clean(number=0):
     """Deletes out-of-date archives with exceptions"""
+=======
+env.hosts = ['107.21.41.165', '54.164.97.140']
+
+
+def do_clean(number=0):
+    """Delete out-of-date archives
+    """
+>>>>>>> 76fec58ef53b10240b16544d83fa0faaa2e595e5
     number = 1 if int(number) == 0 else int(number)
 
     archives = sorted(os.listdir("versions"))
