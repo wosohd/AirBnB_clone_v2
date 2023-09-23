@@ -1,8 +1,11 @@
 #!/usr/bin/python3
+<<<<<<< HEAD
+=======
 """
 Fabric script based on the file 2-do_deploy_web_static.py that creates and
 distributes an archive to the web servers
 """
+>>>>>>> 76fec58ef53b10240b16544d83fa0faaa2e595e5
 import os.path
 from datetime import datetime
 from fabric.api import env
@@ -10,11 +13,19 @@ from fabric.api import local
 from fabric.api import put
 from fabric.api import run
 
+<<<<<<< HEAD
+env.hosts = ['100.25.19.204', '54.157.159.85']
+
+
+def do_pack():
+    """Creates archive of the directory web_static."""
+=======
 env.hosts = ['107.21.41.165', '54.164.97.140']
 
 
 def do_pack():
     """Generates a tar gzipped archive"""
+>>>>>>> 76fec58ef53b10240b16544d83fa0faaa2e595e5
     dt = datetime.utcnow()
     file = "versions/web_static_{}{}{}{}{}{}.tgz".format(dt.year,
                                                          dt.month,
@@ -31,7 +42,11 @@ def do_pack():
 
 
 def do_deploy(archive_path):
+<<<<<<< HEAD
+    """Distributes to the web server an archive if it exists in archive path"""
+=======
     """Distributes an archive to the web server"""
+>>>>>>> 76fec58ef53b10240b16544d83fa0faaa2e595e5
     if os.path.isfile(archive_path) is False:
         return False
     file = archive_path.split("/")[-1]
