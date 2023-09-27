@@ -1,5 +1,11 @@
 #!/usr/bin/python3
+<<<<<<< HEAD
 """starts a flask web application that listens on 0.0.0.0 port 5000"""
+=======
+"""starts a flask web application
+listening on 0.0.0.0 port 5000
+"""
+>>>>>>> ee7d4282272059bdc4332e07909ded1079c88667
 
 from flask import Flask
 app = Flask(__name__)

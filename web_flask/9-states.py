@@ -1,6 +1,10 @@
 #!/usr/bin/python3
+<<<<<<< HEAD
 """
 Importing Flask"""
+=======
+"""Importing Flask to run the web app"""
+>>>>>>> ee7d4282272059bdc4332e07909ded1079c88667
 from flask import Flask, render_template
 from models import storage
 from models.state import State
